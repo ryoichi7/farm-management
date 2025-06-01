@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "744627f0-e831-45b4-9de3-1ef8e8f38d9d",
+		"name": "Farm Management",
+		"description": "API collection for Farm Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31343389"
+	},
+	"item": [
+		{
+			"name": "Weight Service",
+			"item": [
+				{
+					"name": "Record Weight",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"animalId\": \"cow123\",\n    \"weight\": 450.5\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/weights",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"weights"
+							]
+						},
+						"description": "Record new weight measurement for an animal"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Latest Weight",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/weights/cow123/latest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"weights",
+								"cow123",
+								"latest"
+							]
+						},
+						"description": "Get the latest weight record for an animal"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Weight Analytics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/weights/cow123/analytics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"weights",
+								"cow123",
+								"analytics"
+							]
+						},
+						"description": "Get weight analytics for an animal"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Weight History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/weights/cow123/history",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"weights",
+								"cow123",
+								"history"
+							]
+						},
+						"description": "Get weight history for an animal"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Milk Service",
+			"item": [
+				{
+					"name": "Record Milk Yield",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"animalId\": \"cow123\",\n    \"milkAmount\": 25.5\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/milk/record",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"milk",
+								"record"
+							]
+						},
+						"description": "Record new milk yield measurement"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Milk Analytics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/milk/cow123/analytics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"milk",
+								"cow123",
+								"analytics"
+							]
+						},
+						"description": "Get milk yield analytics for a specific period"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Milk Records",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/milk/cow123/records",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"milk",
+								"cow123",
+								"records"
+							]
+						},
+						"description": "Get all milk records for an animal"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
